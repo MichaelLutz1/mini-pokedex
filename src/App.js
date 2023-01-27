@@ -1,7 +1,11 @@
-import "./App.css";
+import PokemonInfo from "./components/PokemonInfo";
 
 function App() {
-  return <div className="App">Hello</div>;
+  return (
+    <>
+      <PokemonInfo />
+    </>
+  );
 }
 
 export default App;
