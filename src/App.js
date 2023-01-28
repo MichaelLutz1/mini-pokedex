@@ -1,10 +1,11 @@
-import PokemonInfo from "./components/PokemonInfo";
+import React from "react";
+import Pokemon from "./components/Pokemon";
 
 function App() {
   return (
-    <>
-      <PokemonInfo />
-    </>
+    <div className="d-flex justify-content-center text-center overflow-hidden">
+      <Pokemon />
+    </div>
   );
 }
 

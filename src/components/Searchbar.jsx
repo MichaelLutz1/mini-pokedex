@@ -7,7 +7,7 @@ function SearchBar(props) {
     reset();
   };
   return (
-    <>
+    <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register("pokemon", { required: true })}
@@ -16,8 +16,9 @@ function SearchBar(props) {
         />
         <input type="submit" />
       </form>
+      {props.isLoading ? <div>loading...</div> : null}
       <div className={props.error}>error: pokemon does not exist</div>
-    </>
+    </div>
   );
 }
 

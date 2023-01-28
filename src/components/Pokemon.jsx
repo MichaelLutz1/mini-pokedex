@@ -1,41 +1,50 @@
 import React, { useState, useEffect } from "react";
 import SearchBar from "./Searchbar";
+import BasicInfo from "./BasicInfo";
 
-function PokemonInfo() {
-  const [pokemonName, setPokemonName] = useState("");
+function Pokemon() {
+  const [pokemonName, setPokemonName] = useState("pikachu");
   const [pokemonData, setPokemonData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("invisible");
   useEffect(() => {
-    async function fetchPokemon(pokemonName) {
+    async function fetchPokemon(name) {
       try {
         setIsLoading(true);
         const pokemonResponse = await fetch(
-          `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
+          `https://pokeapi.co/api/v2/pokemon/${name}`
         );
         const pokemon = await pokemonResponse.json();
-        console.log(pokemon);
         setPokemonData(pokemon);
         setPokemonName(pokemon.name);
+        console.log(pokemon);
         setIsLoading(false);
       } catch {
         setError("visible");
         setIsLoading(false);
         setPokemonName("");
+        setPokemonData(null);
         setTimeout(() => {
           setError("invisible");
         }, 3000);
       }
     }
-    pokemonName === "" ? fetchPokemon("pikachu") : fetchPokemon(pokemonName);
+    fetchPokemon(pokemonName);
   }, [pokemonName]);
   return (
-    <>
-      <SearchBar setPokemonName={setPokemonName} error={error} />
-      <div>{pokemonName}</div>
-      <pre>{JSON.stringify(pokemonData, null, 2)}</pre>
-    </>
+    <div className="container-lg">
+      <SearchBar
+        isLoading={isLoading}
+        setPokemonName={setPokemonName}
+        error={error}
+      />
+      {isLoading ? null : !pokemonData ? null : (
+        <div>
+          <BasicInfo pokemonData={pokemonData} />
+        </div>
+      )}
+    </div>
   );
 }
 
-export default PokemonInfo;
+export default Pokemon;
