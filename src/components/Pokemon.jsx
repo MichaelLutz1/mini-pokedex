@@ -22,8 +22,6 @@ function Pokemon() {
       } catch {
         setError("visible");
         setIsLoading(false);
-        setPokemonName("");
-        setPokemonData(null);
         setTimeout(() => {
           setError("invisible");
         }, 3000);
@@ -38,7 +36,7 @@ function Pokemon() {
         setPokemonName={setPokemonName}
         error={error}
       />
-      {isLoading ? null : !pokemonData ? null : (
+      {isLoading ? null : (
         <div>
           <BasicInfo pokemonData={pokemonData} />
         </div>
