@@ -24,23 +24,25 @@ function Pokemon() {
         setIsLoading(false);
         setTimeout(() => {
           setError("invisible");
-        }, 3000);
+        }, 2500);
       }
     }
     fetchPokemon(pokemonName);
   }, [pokemonName]);
   return (
-    <div className="container-lg">
+    <div className="w-75 h-100 m-auto">
       <SearchBar
         isLoading={isLoading}
         setPokemonName={setPokemonName}
         error={error}
       />
-      {isLoading ? null : (
-        <div>
-          <BasicInfo pokemonData={pokemonData} />
-        </div>
-      )}
+      <div className="d-flex flex-column bg-danger rounded h-75 p-4">
+        {isLoading ? null : !pokemonData ? null : (
+          <div>
+            <BasicInfo pokemonData={pokemonData} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
