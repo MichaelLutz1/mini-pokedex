@@ -1,4 +1,5 @@
 import React from "react";
+import "./BasicInfo.css";
 
 function BasicInfo(props) {
   const data = props.pokemonData;
@@ -15,11 +16,8 @@ function BasicInfo(props) {
         {data.types.map((type) => {
           nextKey++;
           return (
-            <div
-              className="px-3 py-1 m-2 bg-secondary rounded-pill"
-              key={nextKey}
-            >
-              {capitalize(type.type.name)}
+            <div className="px-3 py-1 m-2 rounded-pill" key={nextKey}>
+              <div className={type.type.name}>{capitalize(type.type.name)}</div>
             </div>
           );
         })}
