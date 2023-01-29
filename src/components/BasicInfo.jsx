@@ -11,7 +11,11 @@ function BasicInfo(props) {
     <div>
       <div className="fs-2">{capitalize(data.name)}</div>
       <div>#{data.id}</div>
-      <img src={data.sprites.front_default} alt="sprite of current pokemon" />
+      <img
+        src={data.sprites.front_default}
+        alt="sprite of current pokemon"
+        className="img-fluid"
+      />
       <div className="d-flex justify-content-center">
         {data.types.map((type) => {
           nextKey++;

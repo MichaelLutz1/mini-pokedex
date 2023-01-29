@@ -14,7 +14,7 @@ function SearchBar(props) {
         className="d-flex justify-content-center border-success align-items-center gap-1"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <div className="input-group w-25">
+        <div className="input-group w-25 shadow">
           <input
             {...register("pokemon", { required: true })}
             autoComplete="off"
