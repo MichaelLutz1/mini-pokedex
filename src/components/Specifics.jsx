@@ -10,7 +10,7 @@ function Specifics(props) {
     return Math.round(weight / 4.536);
   }
   return (
-    <div className="container-fluid mt-4">
+    <div className="container-fluid mt-4 p-0">
       <div className="row border border-dark align-items-center mx-3 bg-light">
         <div className="col-3 border-end border-dark py-2">Type</div>
         <div className="row col justify-content-start">
@@ -36,6 +36,15 @@ function Specifics(props) {
       <div className="row border border-dark border-top-0 align-items-center mx-3 bg-light">
         <div className="col-3 py-2 border-end border-dark">Weight</div>
         <div className="col text-start">{calcWeight(data.weight)} lbs</div>
+      </div>
+      <div className="row border border-dark border-top-0 align-items-center mx-3 bg-light">
+        <div className="col-3 py-2 border-end border-dark">Abilities</div>
+        <div className="col row text-center">
+          {data.abilities.map((ab) => {
+            nextKey++;
+            return <div className="col">{ab.ability.name}</div>;
+          })}
+        </div>
       </div>
     </div>
   );

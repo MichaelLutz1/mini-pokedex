@@ -31,13 +31,13 @@ function Pokemon() {
     fetchPokemon(pokemonName);
   }, [pokemonName]);
   return (
-    <div className="container w-75 h-100 m-auto">
+    <div className="container w-75 h-100 m-1 m-md-auto">
       <SearchBar
         isLoading={isLoading}
         setPokemonName={setPokemonName}
         error={error}
       />
-      <div className="row align-items-center justify-content-center bg-danger rounded-5 h-75 p-4">
+      <div className="row align-items-center justify-content-center bg-danger rounded-5 h-75 p-0 p-md-4">
         {isLoading ? null : !pokemonData ? null : (
           <>
             <Image pokemonData={pokemonData} />
