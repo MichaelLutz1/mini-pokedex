@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SearchBar from "./Searchbar";
-import BasicInfo from "./BasicInfo";
+import Info from "./Info";
 import Image from "./Image";
 
 function Pokemon() {
@@ -37,11 +37,11 @@ function Pokemon() {
         setPokemonName={setPokemonName}
         error={error}
       />
-      <div className="row align-items-center bg-danger rounded-5 h-75 p-4">
+      <div className="row align-items-center justify-content-center bg-danger rounded-5 h-75 p-4">
         {isLoading ? null : !pokemonData ? null : (
           <>
             <Image pokemonData={pokemonData} />
-            <BasicInfo pokemonData={pokemonData} />
+            <Info pokemonData={pokemonData} />
           </>
         )}
       </div>

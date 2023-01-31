@@ -11,7 +11,10 @@ function SearchBar(props) {
   return (
     <div className="container mt-4">
       <div className="row justify-content-center">
-        <form className="col-4" onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className="col-xl-4 col-md-6 col-sm-10"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <div className="input-group shadow p-0">
             <input
               {...register("pokemon", { required: true })}
@@ -38,7 +41,7 @@ function SearchBar(props) {
         </form>
       </div>
       <div className="row justify-content-center">
-        <div className="col-4">
+        <div className="col-lg-4 col-md-6 col-sm-10">
           <div className={props.error}>
             <div className="alert alert-warning align-self-center m-auto p-2 mb-1">
               <div>Invalid Pokemon</div>
