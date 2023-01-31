@@ -7,7 +7,7 @@ function Image(props) {
     <img
       src={data.sprites.front_default}
       alt="sprite of current pokemon"
-      className="img-fluid col-6 col-md-5 image-rendering"
+      className="img-fluid col-10 col-sm-8 col-md-5 image-rendering"
     />
   );
 }
