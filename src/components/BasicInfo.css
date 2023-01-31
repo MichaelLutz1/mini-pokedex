@@ -1,3 +1,6 @@
+.white {
+  color: white;
+}
 .bug {
   background-color: #a7b51c;
   color: white;
@@ -119,7 +122,7 @@
   padding: 0 15px;
 }
 .water {
-  background-color: #0c67c2;
+  background-color: #3495f3;
   color: white;
   border: 1px solid black;
   border-radius: 25px;

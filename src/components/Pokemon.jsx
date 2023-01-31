@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SearchBar from "./Searchbar";
 import BasicInfo from "./BasicInfo";
+import Image from "./Image";
 
 function Pokemon() {
   const [pokemonName, setPokemonName] = useState("pikachu");
@@ -30,17 +31,18 @@ function Pokemon() {
     fetchPokemon(pokemonName);
   }, [pokemonName]);
   return (
-    <div className="w-75 h-100 m-auto">
+    <div className="container w-75 h-100 m-auto">
       <SearchBar
         isLoading={isLoading}
         setPokemonName={setPokemonName}
         error={error}
       />
-      <div className="d-flex flex-column bg-danger rounded h-75 p-4">
+      <div className="row align-items-center bg-danger rounded-5 h-75 p-4">
         {isLoading ? null : !pokemonData ? null : (
-          <div>
+          <>
+            <Image pokemonData={pokemonData} />
             <BasicInfo pokemonData={pokemonData} />
-          </div>
+          </>
         )}
       </div>
     </div>
