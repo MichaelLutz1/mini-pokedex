@@ -60,14 +60,14 @@ function Specifics(props) {
           {data.abilities.map((ab) => {
             nextKey++;
             return (
-              <div className="col-auto col-md-4" key={nextKey}>
+              <div className="col-auto col-md-4 text-start" key={nextKey}>
                 {capitalize(ab.ability.name)}
               </div>
             );
           })}
         </div>
       </div>
-      <div className="row px-0 mt-1 border border-secondary mx-3 bg-white align-items-center">
+      <div className="row px-0 border border-top-0 border-secondary mx-3 bg-white align-items-center">
         <div className="py-4 py-md-3 col-md-3 col-4 border-end bg-success border-secondary">
           <div>Base Stats</div>
         </div>
