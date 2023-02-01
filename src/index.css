@@ -1,0 +1,9 @@
+.bg-danger {
+  background: linear-gradient(90deg, #ff4c35 0%, #ff7143 100%);
+}
+.bg-warning {
+  background-color: #ff1e00 !important;
+}
+.bg-success {
+  background-color: #ebebeb !important;
+}

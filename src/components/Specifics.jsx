@@ -19,9 +19,9 @@ function Specifics(props) {
     return capitalize(stat);
   }
   return (
-    <div className="container-fluid mt-4 p-0">
-      <div className="row border border-dark align-items-center mx-3 bg-light">
-        <div className="col-3 border-end border-dark py-2 bg-secondary">
+    <div className="container-fluid mt-2 mt-md-4 p-0 row">
+      <div className="row px-0 border border-secondary align-items-center mx-3 bg-white">
+        <div className="col-md-3 col-4 border-end border-secondary py-2 bg-success">
           Type
         </div>
         <div className="row col justify-content-start">
@@ -40,42 +40,42 @@ function Specifics(props) {
           })}
         </div>
       </div>
-      <div className="row border border-dark border-top-0 align-items-center mx-3 bg-light">
-        <div className="col-3 py-2 border-end border-dark bg-secondary">
+      <div className="row px-0 border border-secondary border-top-0 align-items-center mx-3 bg-white">
+        <div className="col-md-3 col-4 py-2 border-end border-secondary bg-success">
           Height
         </div>
         <div className="col text-start">{data.height * 10} cm</div>
       </div>
-      <div className="row border border-dark border-top-0 align-items-center mx-3 bg-light">
-        <div className="col-3 py-2 border-end border-dark bg-secondary">
+      <div className="row px-0 border border-secondary border-top-0 align-items-center mx-3 bg-white">
+        <div className="col-md-3 col-4 py-2 border-end border-secondary bg-success">
           Weight
         </div>
         <div className="col text-start">{calcWeight(data.weight)} lbs</div>
       </div>
-      <div className="row border border-dark border-top-0 align-items-center mx-3 bg-light">
-        <div className="col-3 py-2 border-end border-dark bg-secondary">
+      <div className="row px-0 border border-secondary border-top-0 align-items-center mx-3 bg-white">
+        <div className="col-md-3 col-4 py-2 border-end border-secondary bg-success">
           Abilities
         </div>
-        <div className="col row text-center">
+        <div className="col row">
           {data.abilities.map((ab) => {
             nextKey++;
             return (
-              <div className="col" key={nextKey}>
+              <div className="col-auto col-md-4" key={nextKey}>
                 {capitalize(ab.ability.name)}
               </div>
             );
           })}
         </div>
       </div>
-      <div className="row mt-1 border border-dark mx-3 bg-light">
-        <div className="col-3 py-2 border-end border-dark bg-secondary">
+      <div className="row px-0 mt-1 border border-secondary mx-3 bg-white">
+        <div className="col-md-3 col-4 py-2 border-end border-secondary bg-success">
           Base Stats
         </div>
         <div className="row col justify-content-around">
           {data.stats.map((st) => {
             nextKey++;
             return (
-              <div className="col-4 text-start fs-6" key={nextKey}>
+              <div className="col-md-4 col-6 text-start fs-6" key={nextKey}>
                 {convertSpecial(st.stat.name)}: {st.base_stat}
               </div>
             );
