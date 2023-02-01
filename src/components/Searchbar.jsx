@@ -20,7 +20,7 @@ function SearchBar(props) {
               {...register("pokemon", { required: true })}
               autoComplete="off"
               type="text"
-              placeholder="Enter a Pokemon..."
+              placeholder="Enter a Pokemon name or ID..."
               className=" form-control py-3"
             />
             {props.isLoading ? (

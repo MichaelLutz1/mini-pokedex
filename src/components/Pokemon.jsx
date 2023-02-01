@@ -6,6 +6,7 @@ import Image from "./Image";
 function Pokemon() {
   const [pokemonName, setPokemonName] = useState("pikachu");
   const [pokemonData, setPokemonData] = useState(null);
+  const [gender, setGender] = useState("male");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("invisible");
 
@@ -41,8 +42,12 @@ function Pokemon() {
         error={error}
       />
       <div className="row shadow align-items-center justify-content-center bg-danger rounded-5 h-75 p-0 p-md-4">
-        <Image pokemonData={pokemonData} />
-        <Info pokemonData={pokemonData} />
+        {!pokemonData ? null : (
+          <>
+            <Image pokemonData={pokemonData} />
+            <Info pokemonData={pokemonData} />
+          </>
+        )}
       </div>
     </div>
   );

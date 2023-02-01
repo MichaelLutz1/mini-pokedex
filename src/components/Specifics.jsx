@@ -19,7 +19,7 @@ function Specifics(props) {
     return capitalize(stat);
   }
   return (
-    <div className="mt-2 mt-md-4 mt-xl-5 p-0 row w-100 fw-semibold">
+    <div className="mt-2 mt-md-4 mt-xl-5 p-0 w-100 fw-semibold">
       <div className="row px-0 border border-secondary align-items-center mx-3 bg-white">
         <div className="col-md-3 col-4 border-end border-secondary py-2 bg-success">
           Type
@@ -67,17 +67,19 @@ function Specifics(props) {
           })}
         </div>
       </div>
-      <div className="row px-0 mt-1 border border-secondary mx-3 bg-white">
-        <div className="h-100 col-md-3 col-4 py-2 border-end border-secondary bg-success">
-          <div className="row h-100 align-content-center justify-content-center">
-            Base Stats
-          </div>
+      <div className="row px-0 mt-1 border border-secondary mx-3 bg-white align-items-center">
+        <div className="py-4 py-md-3 col-md-3 col-4 border-end bg-success border-secondary">
+          <div>Base Stats</div>
         </div>
         <div className="row col justify-content-around">
           {data.stats.map((st) => {
             nextKey++;
             return (
-              <div className="col-md-4 col-6 text-start fs-6" key={nextKey}>
+              <div
+                className="col-md-4 col-6 text-start"
+                style={{ fontSize: "14px" }}
+                key={nextKey}
+              >
                 {convertSpecial(st.stat.name)}: {st.base_stat}
               </div>
             );
