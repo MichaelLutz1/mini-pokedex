@@ -34,19 +34,15 @@ function Pokemon() {
   }, [pokemonName]);
 
   return (
-    <div className="container w-75 h-100 m-1 m-md-auto">
+    <div className="container w-100 h-100 mx-2">
       <SearchBar
         isLoading={isLoading}
         setPokemonName={setPokemonName}
         error={error}
       />
       <div className="row shadow align-items-center justify-content-center bg-danger rounded-5 h-75 p-0 p-md-4">
-        {isLoading ? null : !pokemonData ? null : (
-          <>
-            <Image pokemonData={pokemonData} />
-            <Info pokemonData={pokemonData} />
-          </>
-        )}
+        <Image pokemonData={pokemonData} />
+        <Info pokemonData={pokemonData} />
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ function Specifics(props) {
     return capitalize(stat);
   }
   return (
-    <div className="container-fluid mt-2 mt-md-4 p-0 row">
+    <div className="mt-2 mt-md-4 mt-xl-5 p-0 row w-100 fw-semibold">
       <div className="row px-0 border border-secondary align-items-center mx-3 bg-white">
         <div className="col-md-3 col-4 border-end border-secondary py-2 bg-success">
           Type
@@ -29,7 +29,7 @@ function Specifics(props) {
             nextKey++;
             return (
               <div
-                className="rounded-pill text-center col-auto col-lg-3 col-xl-4 col-xxl-4 pe-0"
+                className="rounded-pill text-center col-auto col-xl-4 col-xxl-4 pe-0"
                 key={nextKey}
               >
                 <div className={type.type.name}>
@@ -68,8 +68,10 @@ function Specifics(props) {
         </div>
       </div>
       <div className="row px-0 mt-1 border border-secondary mx-3 bg-white">
-        <div className="col-md-3 col-4 py-2 border-end border-secondary bg-success">
-          Base Stats
+        <div className="h-100 col-md-3 col-4 py-2 border-end border-secondary bg-success">
+          <div className="row h-100 align-content-center justify-content-center">
+            Base Stats
+          </div>
         </div>
         <div className="row col justify-content-around">
           {data.stats.map((st) => {
