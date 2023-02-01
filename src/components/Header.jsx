@@ -1,6 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMars, faVenus, faStar } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMars,
+  faVenus,
+  faStarOfLife,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Header(props) {
   const data = props.pokemonData;
@@ -17,9 +21,7 @@ function Header(props) {
         alt="pokemon sprite"
         className="img-fluid col-auto col-md-2"
       />
-      <div className="col-auto text-start ps-0" style={{ fontSize: "8px" }}>
-        #{data.id}
-      </div>
+      <div className="col-auto text-start fs-6 ps-0">#{data.id}</div>
 
       <div className="fs-2 col ps-3 py-1 py-md-2 h-100 text-start">
         {capitalize(data.name)}
@@ -30,19 +32,19 @@ function Header(props) {
             <FontAwesomeIcon
               icon={faMars}
               onClick={() => props.setImgType("male")}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer", color: "#033afa" }}
             />
           </div>
           <div className="col-auto py-2 py-md-2 px-1 text-end">
             <FontAwesomeIcon
               icon={faVenus}
               onClick={() => props.setImgType("female")}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer", color: "#e90606" }}
             />
           </div>
           <div className="col-auto py-2 py-md-2 px-1 text-end me-2">
             <FontAwesomeIcon
-              icon={faStar}
+              icon={faStarOfLife}
               onClick={() => props.setImgType("shiny")}
               style={{ cursor: "pointer" }}
             />
