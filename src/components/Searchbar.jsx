@@ -12,7 +12,7 @@ function SearchBar(props) {
     <div className="container mt-4">
       <div className="row justify-content-center">
         <form
-          className="col-xl-4 col-md-6 col-sm-10"
+          className="col-lg-5 col-xl-4 col-md-6 col-sm-10"
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="input-group shadow p-0">
