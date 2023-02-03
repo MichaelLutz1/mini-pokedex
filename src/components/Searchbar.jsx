@@ -5,7 +5,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 function SearchBar(props) {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (input) => {
-    props.setPokemonName(input.pokemon);
+    props.setPokemonName(input.pokemon.toLowerCase());
     reset();
   };
   return (

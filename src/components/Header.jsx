@@ -11,9 +11,6 @@ function Header(props) {
   function capitalize(w) {
     return w.charAt(0).toUpperCase() + w.slice(1);
   }
-  function handleClick(type) {
-    props.setImgType(type);
-  }
   return (
     <div className="row mx-2 align-items-center bg-dark white rounded shadow">
       <img
