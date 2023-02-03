@@ -7,3 +7,6 @@
 .bg-success {
   background-color: #ebebeb !important;
 }
+html {
+  background-color: rgb(108, 117, 125);
+}
